@@ -9,7 +9,7 @@
 <pre>
 var MongoClient = require('mongodb').MongoClient;
 var URL = "mongodb+srv://<User>:<Password>@cluster0.kthq4.mongodb.net/?retryWrites=true&w=majority";
-
+<br/>
 MongoClient.connect(URL, function(error, MongoClient) {
     if (error) {
         console.log("The connection is Failed!");
