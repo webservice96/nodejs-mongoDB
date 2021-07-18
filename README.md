@@ -151,4 +151,41 @@ function InsertData(MongoClient) {
     });
 }
     </pre>
-    </h4>
+</h3>
+
+<!-- Find row with multiple condition -->
+<h2>Find row with multiple condition</h2>
+<h3>
+    <pre>
+function FindQuery(MongoClient) {
+    var MyDB = MongoClient.db('school');
+    var MyCollect = MyDB.collection('students');
+
+    var query = { Eyes: "Ganguro3", Class: "22" }
+
+    MyCollect.find(query).toArray(function(error, result) {
+        console.log(result);
+        MongoClient.close();
+    })
+}
+    </pre>
+</h3>
+
+<!--  -->
+<h2>Find specific Column Projection</h2>
+
+<h3>
+    <pre>
+function FindColumnProjection(MongoClient) {
+    var MyDB = MongoClient.db('school');
+    var MyCollect = MyDB.collection('students');
+
+    var queryObj = {}
+    var Itemprojection = { projection: { ID: 1, Name: 1 } }
+
+    MyCollect.find(queryObj, Itemprojection).toArray(function(error, result) {
+        console.log(result);
+    })
+}
+    </pre>
+</h3>

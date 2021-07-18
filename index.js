@@ -7,10 +7,11 @@ MongoClient.connect(URL, function(error, MongoClient) {
         console.log("Connection is Faild!");
     } else {
         console.log("Connection Success!");
-        InsertData(MongoClient)
-        DeleteData(MongoClient)
-        SelectData(MongoClient)
-        FindColumnProjection(MongoClient)
+        // InsertData(MongoClient)
+        // DeleteData(MongoClient)
+        // SelectData(MongoClient)
+        // FindColumnProjection(MongoClient)
+        FindQuery(MongoClient)
     }
 });
 
@@ -181,5 +182,18 @@ function FindColumnProjection(MongoClient) {
 
     MyCollect.find(queryObj, Itemprojection).toArray(function(error, result) {
         console.log(result);
+    })
+}
+
+// find query
+function FindQuery(MongoClient) {
+    var MyDB = MongoClient.db('school');
+    var MyCollect = MyDB.collection('students');
+
+    var query = { Eyes: "Ganguro3", Class: "22" }
+
+    MyCollect.find(query).toArray(function(error, result) {
+        console.log(result);
+        MongoClient.close();
     })
 }
