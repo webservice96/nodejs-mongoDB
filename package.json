@@ -9,5 +9,8 @@
     },
     "keywords": [],
     "author": "Helal Uddin",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "mongodb": "^4.0.0"
+    }
 }
