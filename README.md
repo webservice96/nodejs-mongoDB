@@ -7,11 +7,11 @@
 <!-- connection node with MongoDB -->
 <h2>NodeJs Connection with MongoDB</h2>
 <pre>
-    MongoClient.connect(URL, function(error, MongoClient) {
-        if (error) {
-            console.log("The connection is Failed!");
-        } else {
-            console.log("Connection Success!");
-        }
-    });
+MongoClient.connect(URL, function(error, MongoClient) {
+    if (error) {
+        console.log("The connection is Failed!");
+    } else {
+        console.log("Connection Success!");
+    }
+});
 </pre>
