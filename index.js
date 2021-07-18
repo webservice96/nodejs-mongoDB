@@ -11,7 +11,12 @@ MongoClient.connect(URL, function(error, MongoClient) {
         // DeleteData(MongoClient)
         // SelectData(MongoClient)
         // FindColumnProjection(MongoClient)
-        FindQuery(MongoClient)
+        // FindQuery(MongoClient)
+
+        // UpdateData(MongoClient)
+
+        NewTable(MongoClient)
+
     }
 });
 
@@ -196,4 +201,35 @@ function FindQuery(MongoClient) {
         console.log(result);
         MongoClient.close();
     })
+}
+
+// Update Data
+function UpdateData(MongoClient) {
+    var MyDB = MongoClient.db('school');
+    var MyCollect = MyDB.collection('students');
+
+    var query = { Class: "32" };
+    var newValue = { $set: { Name: "Helal Uddin" } };
+
+    MyCollect.updateOne(query, newValue, function(error, res) {
+        if (error) {
+            console.log("Update faild!");
+            MongoClient.close();
+        } else if (res) {
+            console.log("Name has been uodated!");
+            MongoClient.close();
+        }
+    });
+}
+
+// create new collectioin
+function NewTable(MongoClient) {
+    var MyDB = MongoClient.db('school');
+    MyDB.createCollection("gurds", function(error, res) {
+        if (error) {
+            console.log("Tabel creation faild!");
+        } else if (res) {
+            console.log("Table created successfully!");
+        }
+    });
 }
