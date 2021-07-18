@@ -6,7 +6,7 @@
 
 <!-- connection node with MongoDB -->
 <h2>NodeJs Connection with MongoDB</h2>
-<h3>
+<h5>
     <pre>
 var MongoClient = require('mongodb').MongoClient;
 var URL = "mongodb+srv://User:Password@cluster0.kthq4.mongodb.net/?retryWrites=true&w=majority";
@@ -19,7 +19,7 @@ MongoClient.connect(URL, function(error, MongoClient) {
     }
 });
 </pre>
-</h3>
+</h5>
 
 <!-- insert one row -->
 <!-- <h2></h2> -->
