@@ -8,7 +8,7 @@
 <h2>NodeJs Connection with MongoDB</h2>
 <pre>
 var MongoClient = require('mongodb').MongoClient;
-var URL = "mongodb+srv://<User>:<Password>@cluster0.kthq4.mongodb.net/?retryWrites=true&w=majority";
+var URL = "mongodb+srv://"<User>"":"<Password>"@cluster0.kthq4.mongodb.net/?retryWrites=true&w=majority";
 <br/>
 MongoClient.connect(URL, function(error, MongoClient) {
     if (error) {
